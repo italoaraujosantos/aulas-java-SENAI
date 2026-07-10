@@ -9,7 +9,7 @@ public class SecondClass {
 
         double height = scanner.nextDouble();
         scanner.nextLine();
-
+        System.out.println("Teste add nova linha");
         scanner.close();
     }
 }
