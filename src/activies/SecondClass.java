@@ -1,3 +1,5 @@
+package activies;
+
 import java.util.Scanner;
 
 public class SecondClass {
