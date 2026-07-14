@@ -1,4 +1,4 @@
-package classroom;
+package classRoom2;
 
 import java.util.Scanner;
 
