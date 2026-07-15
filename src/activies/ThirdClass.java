@@ -23,6 +23,7 @@ public class ThirdClass {
            System.out.println("A opção estava errada!");
        }
         System.out.println("Fim metódo main\n\n");
+        scanner.close();
    }
 
     public static int sum (int parse1, int parse2 ) {

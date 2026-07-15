@@ -16,5 +16,6 @@ public class Objective3 {
         } else {
             System.out.println("O número é Negativo");
         }
+        scanner.close();
     }
 }

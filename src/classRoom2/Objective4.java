@@ -21,5 +21,7 @@ public class Objective4 {
         if(IMC >= 30.0) {
             System.out.println("Obesidade");
         }
+        System.out.println(IMC);
+        scanner.close();
     }
 }

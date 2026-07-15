@@ -15,5 +15,6 @@ public class Objective5 {
         }else if(valorCompra >= 300.0){
             System.out.println("Sem Desconto R$"+valorCompra*0.8);
         }
+        scanner.close();    
     }
 }

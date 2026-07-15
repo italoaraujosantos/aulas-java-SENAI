@@ -8,6 +8,7 @@ public class Objective4 {
         int numero1 = scanner.nextInt();
         int numero2 = scanner.nextInt();
         imprimirResultado(subtrairNumeros(numero1, numero2));
+        scanner.close();
 
     }
 

@@ -17,5 +17,6 @@ public class Objective2 {
             System.out.println("Reprovado.");
         }
         System.out.println(media);
+        scanner.close();
     }
 }

@@ -7,6 +7,7 @@ public class Objective3 {
         Scanner scanner = new Scanner(System.in);
         int idade = scanner.nextInt();
         verificaMaioridade(idade);
+        scanner.close();
     }
 
     public static void verificaMaioridade(int idade){

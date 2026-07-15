@@ -7,6 +7,7 @@ public class Objective5 {
         Scanner scanner = new Scanner(System.in);
         double tempCelsius = scanner.nextDouble();
         avaliarClima(converterParaFahrenheit(tempCelsius));
+        scanner.close();
     }
 
     public static double converterParaFahrenheit(double tempC){

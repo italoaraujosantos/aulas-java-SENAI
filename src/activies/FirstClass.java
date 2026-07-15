@@ -17,5 +17,6 @@ public class FirstClass {
 
         System.out.println("Digite sua idade:  ");
         year = scanner.nextInt();
+        scanner.close();
     }
 }

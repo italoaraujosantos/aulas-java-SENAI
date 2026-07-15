@@ -7,6 +7,7 @@ public class Objective1 {
         Scanner scanner = new Scanner(System.in);
         String nome = scanner.nextLine();
         imprimirSaudacao(nome);
+        scanner.close();
     }
 
     public static void imprimirSaudacao(String nome) {

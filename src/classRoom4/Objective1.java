@@ -20,7 +20,7 @@ public class Objective1 {
         int indice = 0;
         if(senha.equals("9999")) {
             System.out.println("Cofre Aberto!");
-            break;
+            return;
         } else if(tentativas > 0) {
             tentativas--;
             indice++;

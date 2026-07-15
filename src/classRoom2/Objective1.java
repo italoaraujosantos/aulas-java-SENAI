@@ -14,5 +14,6 @@ public class Objective1 {
         if ((age >= 18) && (age < 70)) {
             System.out.println("Voto obrigatório.");
         }
+        scanner.close();
     }
 }

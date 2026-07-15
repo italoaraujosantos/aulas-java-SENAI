@@ -8,6 +8,7 @@ public class Objective2 {
         int numero = scanner.nextInt();
         int resultado = calcularDobro(numero);
         System.out.println("O dobro do número é "+resultado);
+        scanner.close();
     }
 
     public static int calcularDobro(int numero) {
