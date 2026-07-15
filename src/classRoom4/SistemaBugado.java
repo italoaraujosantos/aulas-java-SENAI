@@ -1,4 +1,4 @@
-
+package classRoom4;
 
 // Nome da classe esta em minusculo, o que não é uma boa prática em Java. O nome da classe deve começar com letra maiúscula.
 public class SistemaBugado {
