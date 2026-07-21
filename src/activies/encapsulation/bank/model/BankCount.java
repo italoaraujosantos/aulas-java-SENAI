@@ -1,13 +1,20 @@
 package activies.encapsulation.bank.model;
 
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
 public class BankCount {
     private String starter;
     private int numberOfCount;
     private double balance;
 
-    public BankCount(String starter, int numberOfCount, double balance) {
+    private static final Random random = new Random();
+    private static final Set<Integer> genereteCounts = new HashSet<>();
+
+    public BankCount(String starter) {
         this.starter = starter;
-        this.numberOfCount = numberOfCount;
+        this.numberOfCount = generateNumberOfCount();
         this.balance = balance;
     }
 
@@ -15,33 +22,29 @@ public class BankCount {
         return starter;
     }
 
-    public void setStarter(String starter) {
-        this.starter = starter;
+    @Override
+    public String toString() {
+        return "BankCount{" +
+                "starter='" + starter + '\'' +
+                ", numberOfCount=" + numberOfCount +
+                ", balance=" + balance +
+                "}\n";
     }
 
-    public int getNumberOfCount() {
-        return numberOfCount;
-    }
+    private int generateNumberOfCount() {
+        int number;
 
-    public void setNumberOfCount(int numberOfCount) {
-        this.numberOfCount = numberOfCount;
-    }
+        do {
+            number = 100000 + random.nextInt(900000);
+        } while (genereteCounts.contains(number));
 
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public double countBalance() {
-        return this.getBalance();
+        genereteCounts.add(number);
+        return number;
     }
 
     public void depositInCount(double value) {
         if(value > 0) {
-            this.setBalance(value);
+            this.balance = value;
         } else {
             throw new IllegalArgumentException("Valor de deposito deve ser maior que zero!");
         }
