@@ -9,8 +9,10 @@ public class Main {
 
         PolicialGDF policial = new PolicialGDF("Castro", "156456", "SESPDF", "Sargento");
 
+        professor.baterPonto();
         professor.trabalhar();
 
+        policial.baterPonto();
         policial.trabalhar();
     }
 }
