@@ -1,6 +1,7 @@
 package activies.polymorphism.examples.form;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,20 +9,67 @@ public class Main {
         Registration person2 = new Registration("Lorrayne", 29, false);
         Registration person3 = new Registration("Larrisa");
         ArrayList<Registration> registrations = new ArrayList<>();
-        registrations = create(person1);
-        registrations = create(person2);
-        registrations = create(person3);
+        registrations.add(person1);
+        registrations.add(person2);
+        registrations.add(person3);
 
+        ArrayList<Registration> filledInFields = unfilledFields(classifyNoActive(registrations));
+
+        printRegistrations(filledInFields);
     }
 
-    public static ArrayList<Registration> create(Registration registration){
-        ArrayList<Registration> registrations = new ArrayList<>();
-        registrations.add(registration);
-        return registrations;
+
+    /**
+     * Classifica elementos da lista de registros não ativos.
+     * @param registrations classifies Lista de registros classificados.
+     */
+    public static ArrayList<Registration> classifyNoActive(ArrayList<Registration> registrations) {
+        ArrayList<Registration> classifies = new ArrayList<>();
+        for(Registration registration: registrations) {
+            if(registration.isActive() == false) {
+                classifies.add(registration);
+            }
+        }
+        return classifies;
     }
 
-    public static ArrayList<Registration> classify(ArrayList<Registration> registrations) {
+    /**
+     * Preencher campos nulos ou zeros.
+     *
+     * @param classifies Lista de registros ja classificados
+     * @return classifies Lista com todos os campos preenchidos
+     */
+    public static ArrayList<Registration> unfilledFields(ArrayList<Registration> classifies) {
+        Scanner scanner = new Scanner(System.in);
+        for(Registration classify: classifies) {
+            if(classify.getName() == null) {
+                System.out.println("Digite o nome: ");
+                String text = scanner.nextLine();
+                classify.setName(text);
+                scanner.nextLine();
+            }
+            if(classify.getAge() == 0){
+                System.out.println("Informe a idade: ");
+                int age = scanner.nextInt();
+                classify.setAge(age);
+            }
+            if(classify.getPosition() == null) {
+                System.out.println("Informe o cargo: ");
+                String position = scanner.nextLine();
+                classify.setPosition(position);
+                scanner.nextLine();
+            }
+            if(classify.isActive() == false) {
+                classify.setActive(true);
+            }
+        }
+        scanner.close();
+        return classifies;
+    }
 
-        return registrations;
+    public static void printRegistrations(ArrayList<Registration> registrations) {
+        for(Registration registration: registrations) {
+            registration.toString();
+        }
     }
 }
