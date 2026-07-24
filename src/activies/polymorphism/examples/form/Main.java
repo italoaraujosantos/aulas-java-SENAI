@@ -12,12 +12,13 @@ public class Main {
         registrations.add(person1);
         registrations.add(person2);
         registrations.add(person3);
-
-        ArrayList<Registration> filledInFields = unfilledFields(classifyNoActive(registrations));
+        
+        ArrayList<Registration> classifies = classifyNoActive(registrations);
+        
+        ArrayList<Registration> filledInFields = unfilledFields(classifies);
 
         printRegistrations(filledInFields);
     }
-
 
     /**
      * Classifica elementos da lista de registros não ativos.
@@ -26,7 +27,7 @@ public class Main {
     public static ArrayList<Registration> classifyNoActive(ArrayList<Registration> registrations) {
         ArrayList<Registration> classifies = new ArrayList<>();
         for(Registration registration: registrations) {
-            if(registration.isActive() == false) {
+            if(!registration.isActive()) {
                 classifies.add(registration);
             }
         }
@@ -59,7 +60,7 @@ public class Main {
                 classify.setPosition(position);
                 scanner.nextLine();
             }
-            if(classify.isActive() == false) {
+            if(!classify.isActive()) {
                 classify.setActive(true);
             }
         }
@@ -69,7 +70,7 @@ public class Main {
 
     public static void printRegistrations(ArrayList<Registration> registrations) {
         for(Registration registration: registrations) {
-            registration.toString();
+            String string = registration.toString();
         }
     }
 }
